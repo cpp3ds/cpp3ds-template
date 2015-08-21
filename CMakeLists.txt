@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
+# Project name without spaces or special characters
+project("cpp3ds-template")
+
 # Include cpp3ds cmake module
 set(CPP3DS $ENV{CPP3DS})
 if(NOT CPP3DS)
@@ -8,9 +11,6 @@ endif()
 set(CMAKE_MODULE_PATH "${CPP3DS}/cmake" ${CMAKE_MODULE_PATH})
 include(cpp3ds)
 
-
-# Project name without spaces or special characters
-project("cpp3ds-template")
 
 # These can all be removed if there are no directories to add.
 # They're for cases when you want some directories in one build,
