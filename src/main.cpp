@@ -1,4 +1,5 @@
 #include <cpp3ds/Graphics.hpp>
+#include <cpp3ds/System.hpp>
 #include <cpp3ds/Window.hpp>
 
 using namespace cpp3ds;
@@ -12,7 +13,7 @@ public:
 		// Constructor for setting up initial game objects
 		text.setColor(Color::Green);
 		text.setCharacterSize(40);
-		text.setString("Hello World");
+		text.setString(_("Hello World"));
 	}
 
 	~MyGame() {
