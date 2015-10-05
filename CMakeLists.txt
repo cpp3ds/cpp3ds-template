@@ -18,6 +18,9 @@ endif()
 set(CMAKE_MODULE_PATH "${CPP3DS}/cmake" ${CMAKE_MODULE_PATH})
 include(cpp3ds)
 
+# Use either nihstro or picasso for your shader scripts
+set(SHADER_AS nihstro)
+
 # You may prefer not to use GLOB and instead define each file explicitly.
 # See: http://stackoverflow.com/questions/1027247/best-way-to-specify-sourcefiles-in-cmake
 # Variables used by template: SOURCE_FILES & SHADER_FILES
@@ -32,7 +35,7 @@ FILE(GLOB_RECURSE SHADER_FILES ${PROJECT_SOURCE_DIR}/res/romfs/shaders/[^.]*.vsh
 set(CPP3DS_ARM_FLAGS "-g -O2 -fno-rtti -fno-exceptions -march=armv6k -mtune=mpcore -mfloat-abi=hard")
 set(CPP3DS_EMU_FLAGS "-g -O0")
 
-set(CPP3DS_ARM_LIBS cpp3ds gl3ds ctru freetype png z vorbisenc vorbisfile vorbis ogg)
+set(CPP3DS_ARM_LIBS cpp3ds-window cpp3ds-graphics cpp3ds-audio cpp3ds-system gl3ds ctru freetype png z vorbisenc vorbisfile vorbis ogg)
 set(CPP3DS_EMU_LIBS cpp3ds-emu sfml-graphics sfml-window sfml-system sfml-audio GLEW GL jpeg freetype vorbisenc vorbisfile vorbis ogg)
 
 add_subdirectory(${CPP3DS}/cmake/template_arm build/arm)
