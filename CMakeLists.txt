@@ -39,4 +39,4 @@ set(CPP3DS_ARM_LIBS cpp3ds-window cpp3ds-graphics cpp3ds-audio cpp3ds-system gl3
 set(CPP3DS_EMU_LIBS cpp3ds-emu sfml-graphics sfml-window sfml-system sfml-audio GLEW GL jpeg freetype vorbisenc vorbisfile vorbis ogg)
 
 add_subdirectory(${CPP3DS}/cmake/template_arm build/arm)
-add_subdirectory(${CPP3DS}/cmake/template_emu build/emu)
+#add_subdirectory(${CPP3DS}/cmake/template_emu build/emu)
