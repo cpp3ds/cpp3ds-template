@@ -9,6 +9,7 @@ set(APP_AUTHOR "Cruel")
 set(APP_ICON ${PROJECT_SOURCE_DIR}/res/app/icon.png)
 set(BANNER_IMAGE ${PROJECT_SOURCE_DIR}/res/app/banner.png)
 set(BANNER_SOUND ${PROJECT_SOURCE_DIR}/res/app/banner.wav)
+set(CIA_CONFIG ${PROJECT_SOURCE_DIR}/res/app/cia.rsf)
 
 # Include cpp3ds cmake module
 set(CPP3DS $ENV{CPP3DS})
