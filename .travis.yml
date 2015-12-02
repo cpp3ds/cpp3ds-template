@@ -5,6 +5,16 @@ language: cpp
 
 sudo: false
 
+addons:
+  apt:
+    sources:
+      - ubuntu-sdk-team
+      - kalakris-cmake
+    packages:
+      - libsfml-dev
+      - qt5-default
+      - cmake
+
 script:
   - export DEVKITPRO=${HOME}/devkitPro
   - export DEVKITARM=${DEVKITPRO}/devkitARM
