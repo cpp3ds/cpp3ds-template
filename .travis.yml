@@ -20,8 +20,8 @@ script:
   - export DEVKITARM=${DEVKITPRO}/devkitARM
   - export CPP3DS=$(pwd)/cpp3ds
   - export PATH=${CPP3DS}/bin:${DEVKITARM}/bin:${PATH}
-  - wget https://github.com/cpp3ds/cpp3ds/releases/download/v0.1/cpp3ds-linux-v0.1.tar.xz
-  - tar -xaf cpp3ds-linux-v0.1.tar.xz
+  - wget https://github.com/cpp3ds/cpp3ds/releases/download/v0.2/cpp3ds-linux-v0.2.tar.xz
+  - tar -xaf cpp3ds-linux-v0.2.tar.xz
   - wget http://sourceforge.net/projects/devkitpro/files/Automated%20Installer/devkitARMupdate.pl
   - perl devkitARMupdate.pl
   - git clone https://github.com/smealum/ctrulib.git
