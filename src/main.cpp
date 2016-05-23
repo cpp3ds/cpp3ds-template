@@ -10,7 +10,7 @@ private:
 public:
 	MyGame() {
 		// Constructor for setting up initial game objects
-		text.setColor(cpp3ds::Color::Green);
+		text.setFillColor(cpp3ds::Color::Green);
 		text.setCharacterSize(40);
 		text.setString(_("Hello World"));
 	}
@@ -48,8 +48,8 @@ public:
 
 
 int main(int argc, char** argv) {
+	cpp3ds::Console::enable(cpp3ds::BottomScreen); // Console for reading stdout
 	MyGame game;
-	game.console(cpp3ds::BottomScreen); // Console for reading stdout
 	game.run();
 	return 0;
 }

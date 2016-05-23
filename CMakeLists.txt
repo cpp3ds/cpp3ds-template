@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 2.8.11)
 
 # Project name without spaces or special characters
 project("cpp3ds-template")
@@ -40,8 +40,8 @@ FILE(GLOB_RECURSE SHADER_FILES ${PROJECT_SOURCE_DIR}/res/romfs/shaders/[^.]*.vsh
 set(CPP3DS_ARM_FLAGS "-g -O2 -fno-rtti -fno-exceptions -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft")
 set(CPP3DS_EMU_FLAGS "-g -O0")
 
-set(CPP3DS_ARM_LIBS cpp3ds-window cpp3ds-graphics cpp3ds-audio cpp3ds-system gl3ds ctru freetype png z vorbisenc vorbisfile vorbis ogg)
-set(CPP3DS_EMU_LIBS cpp3ds-emu sfml-graphics sfml-window sfml-system sfml-audio openal GLEW GL jpeg freetype vorbisenc vorbisfile vorbis ogg)
+set(CPP3DS_ARM_LIBS cpp3ds-window cpp3ds-graphics cpp3ds-audio cpp3ds-system citro3d ctru freetype png z vorbisenc vorbisfile vorbis ogg)
+set(CPP3DS_EMU_LIBS cpp3ds-emu sfml-graphics sfml-window sfml-system sfml-audio openal GLEW GL jpeg freetype vorbisenc vorbisfile vorbis ogg ssl crypto pthread)
 
 add_subdirectory(${CPP3DS}/cmake/template_arm build/arm)
 add_subdirectory(${CPP3DS}/cmake/template_emu build/emu)

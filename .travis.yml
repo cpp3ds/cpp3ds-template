@@ -3,29 +3,42 @@ os:
 
 language: cpp
 
-sudo: false
+sudo: required
+dist: trusty
 
 addons:
   apt:
     sources:
+      - ubuntu-toolchain-r-test
       - ubuntu-sdk-team
-      - kalakris-cmake
     packages:
+      - gcc-6
+      - g++-6
       - libsfml-dev
       - qt5-default
+      - libglew-dev
+      - libopenal-dev
+      - libvorbis-dev
       - cmake
+      - cmake-data
 
 script:
+  - export CC=gcc-6
+  - export CXX=g++-6
   - export DEVKITPRO=${HOME}/devkitPro
   - export DEVKITARM=${DEVKITPRO}/devkitARM
+  - export CTRULIB=${DEVKITPRO}/libctru
   - export CPP3DS=$(pwd)/cpp3ds
   - export PATH=${CPP3DS}/bin:${DEVKITARM}/bin:${PATH}
-  - wget https://github.com/cpp3ds/cpp3ds/releases/download/v0.2/cpp3ds-linux-v0.2.tar.xz
-  - tar -xaf cpp3ds-linux-v0.2.tar.xz
-  - wget http://sourceforge.net/projects/devkitpro/files/Automated%20Installer/devkitARMupdate.pl
-  - perl devkitARMupdate.pl
+  - wget https://github.com/cpp3ds/cpp3ds/releases/download/v0.3/cpp3ds-linux-v0.3.tar.xz
+  - tar -xaf cpp3ds-linux-v0.3.tar.xz
+  - wget https://sourceforge.net/projects/devkitpro/files/devkitARM/devkitARM_r45/devkitARM_r45-x86_64-linux.tar.bz2
+  - mkdir $DEVKITPRO
+  - tar -xaf devkitARM_r45-x86_64-linux.tar.bz2 -C $DEVKITPRO
   - git clone https://github.com/smealum/ctrulib.git
   - cd ctrulib/libctru && make -j4 install && cd -
+  - git clone https://github.com/fincs/citro3d.git
+  - cd citro3d && make -j4 install && cd -
   - mkdir build && cd build
   - cmake ..
   - make
